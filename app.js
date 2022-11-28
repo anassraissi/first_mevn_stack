@@ -38,9 +38,12 @@ app.get('/', (req, res) => {
   res.send('hello world')
 })
 
+  const TodosRoute=require('./routes/Todos');
+app.use('/todos',TodosRoute)
 // respond with "hello world" when a GET request is made to the homepage
 app.listen(3000,()=>{
   console.log('Listning at port 3000');
 })
+
 
 
