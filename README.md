@@ -61,5 +61,24 @@ app.use(function(req, res, next) {
  ## Express body-parser is an npm library used to process data sent through an HTTP request body. It exposes four express middlewares for parsing text, JSON, url-encoded and raw data set through an HTTP request body. These middlewares are functions that process incoming requests before they reach the target controller.
 ```
 
+# mongodb use no sql database
+## KEY DIFFERENCE between nosql qnd sql
+```bash
+
+##The five critical differences between SQL vs NoSQL are:
+
+1.SQL databases are relational, NoSQL databases are non-relational.
+
+2.SQL databases use structured query language and have a predefined schema. NoSQL databases have dynamic schemas for unstructured data.
+
+3.SQL databases are vertically scalable, while NoSQL databases are horizontally scalable.
+
+4.SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores.
+
+5.SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.
+```
+
+
+
 
 
