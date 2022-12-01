@@ -1,11 +1,9 @@
-
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 
 // create out express app
 const app = express()
-//
 
 // Handle CORS + middleware
 app.use(function(req, res, next) {
@@ -15,11 +13,8 @@ app.use(function(req, res, next) {
   next();
 })
 
-
-//my connection string from mongo db: mongodb+srv://userdb:<password>@cluster0.xbzxxb7.mongodb.net/?retryWrites=true&w=majority
-
 // database stuff
-const uri = "mongodb+srv://userdb:<password>@cluster0.xbzxxb7.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://userdb:1234@cluster0.xbzxxb7.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -29,21 +24,17 @@ mongoose.connect(uri, {
 })
 .catch(err => console.log(err))
 
-app.get('/', (req, res) => {
-  res.send('hello world')
+app.use(bodyParser.json())
+
+// routes
+app.get("/", (res, req) => {
+  res.send("yay home page")
 })
 
-//routes
-app.get('/', (req, res) => {
-  res.send('hello world')
+const TodosRoute = require('./routes/Todos');
+  app.use('/todos', TodosRoute)
+
+// start server
+app.listen(3000, () => {
+  console.log("Listening at port 3000")
 })
-
-  const TodosRoute=require('./routes/Todos');
-app.use('/todos',TodosRoute)
-// respond with "hello world" when a GET request is made to the homepage
-app.listen(3000,()=>{
-  console.log('Listning at port 3000');
-})
-
-
-
