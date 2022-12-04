@@ -78,7 +78,16 @@ app.use(function(req, res, next) {
 5.SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.
 ```
 
+# reactive
+```bash
+One of Vue's most distinctive features is the unobtrusive reactivity system. Component state consists of reactive JavaScript objects. When you modify them, the view updates. It makes state management simple and intuitive, but it's also important to understand how it works to avoid some common gotchas.
 
+Reactivity is the ability for a variable (array, string, number, object, etc) to update when its value or any other variable that it makes reference to is changed after declaration.25 mar. 2021
+```
+# Referencing Values with Refs
+```bash
+When you want a component to “remember” some information, but you don’t want that information to trigger new renders, you can use a ref.
+```
 
 
 
