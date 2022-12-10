@@ -12,13 +12,12 @@ router.get('/', async (req, res) => {
 // Create new Todo
 router.post('/new', async (req, res) => {
   
-  const newTodo = Todo.insert({ author:"Latifa Zgadi", todo:"Go to karia"})
-    // req.body // What the Vue App is sending
+  const newTodo = Todo.insert({})
+    req.body // What the Vue App is sending
     /* { // pass in body content to be stored in DB
         author:"Flanders", 
         todo:"Go to canada"
       } */
-  
   
   const savedTodo = await newTodo.save() // mongo save method
   res.json(savedTodo) // respond with json to our post endpoint
